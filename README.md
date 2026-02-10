@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# BloodConnect
+
+BloodConnect is a web application for blood donation and campaign registration, built with Next.js 14, Tailwind CSS, shadcn/ui, and Firebase.
+
+## Features
+
+- **Donor Registration:** Users can register as blood donors.
+- **Blood Bank Dashboard:** Real-time view of blood stock availability.
+- **Campaign Registration:** Organizers can register and list blood donation drives.
+- **Emergency Requests:** Urgent blood requests broadcast to donors (simulated).
+- **Admin Panel:** Manage blood banks, stock, and donors.
+- **Real-time Updates:** Powered by Cloud Firestore.
 
 ## Getting Started
 
-First, run the development server:
+1.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3.  **Open [http://localhost:3000](http://localhost:3000)** in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Firebase Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- The project uses the Firebase configuration provided.
+- **Security Rules:** Deploy `firestore.rules` to your Firebase project to secure the database.
+    ```bash
+    firebase deploy --only firestore:rules
+    ```
 
-## Learn More
+## Admin Access
 
-To learn more about Next.js, take a look at the following resources:
+- New users are registered with the `donor` role by default.
+- To access the **Admin Panel** (`/admin`), you can use the "Switch Role to Admin (Demo Only)" button on the Admin page if you are logged in but not an admin.
+- In a production environment, you would manually update the user document in the `users` collection to have `role: 'admin'`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `src/app`: Application pages and layout (Next.js App Router).
+- `src/components`: Reusable UI components and feature-specific forms.
+- `src/lib`: Utilities, Firebase config, and Zod schemas.
+- `src/context`: Authentication context provider.
