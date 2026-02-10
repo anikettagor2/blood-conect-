@@ -38,8 +38,14 @@ export function EmergencyRequestForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const form = useForm<EmergencyRequestFormData>({
-    resolver: zodResolver(emergencyRequestSchema),
+    resolver: zodResolver(emergencyRequestSchema) as any,
     defaultValues: {
+      patientName: "",
+      hospitalName: "",
+      bloodGroup: "A+",
+      unitsNeeded: 1,
+      contactNumber: "",
+      city: "",
       priority: "Emergency",
     },
   })

@@ -117,7 +117,7 @@ export function Navbar() {
               {user ? (
                  <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      {user.photoURL && <img src={user.photoURL} className="w-8 h-8 rounded-full" />}
+                      {user.photoURL && <img src={user.photoURL} alt="User" className="w-8 h-8 rounded-full" />}
                       <span className="font-semibold">{user.displayName}</span>
                     </div>
                     <Button onClick={handleSignOut} variant="outline" className="w-full justify-start text-red-600">

@@ -136,7 +136,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">How BloodConnect Works</h2>
-            <p className="text-lg text-slate-600">We've simplified the process to make saving lives easier than ever.</p>
+            <p className="text-lg text-slate-600">We&apos;ve simplified the process to make saving lives easier than ever.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">

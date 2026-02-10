@@ -43,8 +43,15 @@ export function DonorRegistrationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const form = useForm<DonorFormData>({
-    resolver: zodResolver(donorSchema),
+    resolver: zodResolver(donorSchema) as any,
     defaultValues: {
+      fullName: "",
+      age: 18,
+      gender: "Male",
+      bloodGroup: "A+",
+      phone: "",
+      city: "",
+      lastDonationDate: "",
       isEligible: false,
     },
   })

@@ -36,7 +36,16 @@ export function CampaignRegistrationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const form = useForm<CampaignFormData>({
-    resolver: zodResolver(campaignSchema),
+    resolver: zodResolver(campaignSchema) as any,
+    defaultValues: {
+      name: "",
+      description: "",
+      organizer: "",
+      date: "",
+      time: "",
+      location: "",
+      city: "",
+    },
   })
 
   async function onSubmit(data: CampaignFormData) {

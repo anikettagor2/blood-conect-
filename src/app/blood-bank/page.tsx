@@ -72,7 +72,7 @@ export default function BloodBankDashboard() {
     },
     {
        id: "mock-4",
-       name: "St. Mary's Hospital",
+       name: "St. Mary&apos;s Hospital",
        city: "Manhattan",
        address: "101 1st Ave, New York, NY",
        phone: "+1 (555) 111-2222",
